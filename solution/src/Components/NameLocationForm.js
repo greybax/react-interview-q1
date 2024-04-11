@@ -71,7 +71,7 @@ function NameLocationForm() {
                   selectLocations={selectLocations}
                   onChange={(val) => setFormSelect(val)}
               />
-              <div className="button-group">
+              <div className="buttongroup">
                   <button onClick={handleClear}>Clear</button>
                   <button disabled={!buttonIsEnabled} type="submit">Add</button>
               </div>

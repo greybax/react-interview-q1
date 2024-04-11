@@ -5,7 +5,7 @@ function InputLocations(props) {
 
   // Map locations from api to options in select statement, give unique keys in case of duplicates.
   return (
-    <div>
+    <div className="inputLocationBox">
       <label htmlFor="location" className="label">
         Location 
       </label>
