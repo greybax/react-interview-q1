@@ -1,6 +1,6 @@
 import './Input.css'
 
-// props.error - Toggle display of error text from props.error.
+// Toggle display of error text from props.error.
 function InputName({onChange, ...props}) {
   return (
     <>
@@ -21,10 +21,7 @@ function InputName({onChange, ...props}) {
                   This name has already been taken
           </p> : ''}
         </div>
-       
       </div>
-      
-      
     </>
   )
 }

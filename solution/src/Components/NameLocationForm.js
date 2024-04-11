@@ -4,6 +4,7 @@ import InputLocations from './InputLocation';
 import NameLocationTable from './NameLocationTable';
 import { isNameValid } from '../mock-api/apis';
 import { getLocations } from '../mock-api/apis';
+import { debounce } from 'lodash';
 
 function NameLocationForm() {
     const [nameValue, setNameValue] = useState("");
@@ -29,15 +30,16 @@ function NameLocationForm() {
 
     const validateName = async (e) => {
       const isValidName = await isNameValid(e);
+      console.log("isValidName", isValidName)
       setValidName(isValidName);
 
       setNameValue(e);
     };
 
-    const handleNameValueUpdate = (e) => {
-      validateName(e);
-    }
-
+    const handleNameValueUpdate = debounce((e) => {
+      validateName(e)
+    }, 500);
+    
     const handleSubmit = (e) => {
       e.preventDefault();
 
